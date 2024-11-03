@@ -1,0 +1,39 @@
+body{ 
+    background-color:#bb46e9
+}
+p{ 
+    width:70%; 
+    height:300px;
+    text-align: left; 
+    font-size:120%; 
+    background-color:#290ff1; 
+    color:hsl(0, 9%, 98%);
+    margin-left:auto; 
+    margin-right:auto; 
+    border: #000 5px dotted; 
+    border-radius: 15px 0 15px 0;
+
+    padding: 10px; 
+    box-shadow: 5px 5px 3px 5px #8d8c8d;  
+}
+    
+h1{ 
+    background-color:rgb(183, 0, 255) ; 
+    color:maroon;  
+}
+
+    
+.imageFond{ 
+    Background-image:url('logo_W3C.gif');
+    background-repeat: no-repeat;
+    background-position: center center ;
+    background-color: rgb(255, 47, 175);
+    background-size: 100% 100%; 
+    width: auto;   
+}
+
+#degradejr{
+    background:linear-gradient(45deg, rgb(234, 177, 224),rgb(128, 0, 107),red);
+}			 
+
+				

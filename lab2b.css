@@ -1,0 +1,29 @@
+.im { 
+float:right;
+ margin: 10px;
+ width: 40%; /* height sera fixé automatiquement */
+ } 
+		
+.p1 { 
+float:left;
+   background-color:rgb(48, 93, 206);
+   width: 20%;
+   height: 200px;
+   border: 10px solid rgb(15, 15, 15);
+   margin-left: 10px;
+   margin-right: 10px;
+   padding: 5px;
+   overflow: auto; 
+   
+}	
+p { text-align:justify;}
+.p2 { 
+    clear:both;
+    background-color:rgb(89, 75, 214);
+
+}	
+.p3 { 
+    background-color:#0FF;
+   
+}			
+	

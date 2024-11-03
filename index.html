@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grille des photos</title>
+    <style>
+        .grid {
+            display: grid;
+            grid-template-columns: 100px 100px 100px;
+            grid-template-rows: 100px 100px 100px;
+            justify-content: center;
+            align-items: center;
+        }
+
+        img {
+            width: 100px;
+            height: 100px;
+            cursor: pointer;
+        }
+
+
+        input[type="radio"] {
+            display: none;
+        }
+
+
+        #image1:checked ~ .center img {
+            content: url('award1.png');
+        }
+
+        #image2:checked ~ .center img {
+            content: url('arrow-right.png');
+        }
+
+        #image3:checked ~ .center img {
+            content: url('medal.png');
+        }
+
+        #image4:checked ~ .center img {
+            content: url('arrow-up.png');
+        }
+
+        #image5:checked ~ .center img {
+            content: url('arrow-down.png');
+        }
+
+        #image6:checked ~ .center img {
+            content: url('trophy.png');
+        }
+
+        #image7:checked ~ .center img {
+            content: url('arrow-left.png');
+        }
+
+        #image8:checked ~ .center img {
+            content: url('star.png');
+        }
+    </style>
+</head>
+<body>
+
+    <h1><center>Grille des photos</center></h1>
+    <div class="grid">
+        <input type="radio" id="image1" name="image-selector">
+        <input type="radio" id="image2" name="image-selector">
+        <input type="radio" id="image3" name="image-selector">
+        <input type="radio" id="image4" name="image-selector">
+        <input type="radio" id="image5" name="image-selector">
+        <input type="radio" id="image6" name="image-selector">
+        <input type="radio" id="image7" name="image-selector">
+        <input type="radio" id="image8" name="image-selector">
+
+
+        <label for="image1">
+            <img src="award1.png" alt="Award 1">
+        </label>
+        <label for="image2">
+            <img src="arrow-right.png" alt="Arrow Right">
+        </label>
+        <label for="image3">
+            <img src="medal.png" alt="Medal">
+        </label>
+        <label for="image4">
+            <img src="arrow-up.png" alt="Arrow Up">
+        </label>
+
+        <!-- Center image -->
+        <div class="center">
+            <img src="star.png" alt="Center Star">
+        </div>
+
+        <label for="image5">
+            <img src="arrow-down.png" alt="Arrow Down">
+        </label>
+        <label for="image6">
+            <img src="trophy.png" alt="Trophy">
+        </label>
+        <label for="image7">
+            <img src="arrow-left.png" alt="Arrow Left">
+        </label>
+        <label for="image8">
+            <img src="star.png" alt="Star">
+        </label>
+    </div>
+
+</body>
+</html>

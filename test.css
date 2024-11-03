@@ -1,0 +1,43 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.list-container {
+    color: #34a853;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: auto; 
+}
+
+ol {
+    padding-left: 20px;
+}
+
+.level-1 > li {
+    color: #1a73e8;
+}
+
+.level-2 > li {
+    color: #34a853;
+}
+
+.level-3 > li {
+    color: #ea4335;
+}
+
+ol li {
+    margin: 5px 0;
+}
+
+ol li:hover {
+    background-color: #f1f3f4;
+    cursor: pointer;
+}
+
