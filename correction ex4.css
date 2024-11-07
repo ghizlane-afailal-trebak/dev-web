@@ -1,0 +1,62 @@
+
+nav ul{
+
+text-align: right;
+
+height: 30px;
+
+line-height: 30px;
+
+background-color: #CCC;
+
+}
+
+nav ul li {
+
+text-align: center;
+
+display: inline-block; /* Utiliser inline-block pour une meilleure gestion des dimensions */
+
+margin-right: 15px;
+
+margin-left: 15px;
+
+position: relative; /*Positionner le sous-mena paz zapport à l'élément parent */
+
+}
+/*Sous-menu*/
+
+nav ul li ul {
+
+display: none;/* Masqué par défaut*/
+
+position: absolute; /*Positionné par rapport à l'élénent parent*/
+
+top: 100%; /*juste en dessous du menu principal */
+
+left: 0; /* Aligne à gauche */
+
+z-index: 1000; /*Pour s'assurer qu'il apparait au-dessus */
+
+white-space: nowrap; /* evite le cetour à la ligne*/
+
+height: 90px;
+
+padding: 10px;
+
+}
+
+nav ul li:hover ul {
+
+display: block; /* Affiche le sous-menu au survol */
+}
+nav ul li ul li {
+
+display: block; /*Les éléments du sous-menu s'affichent en bloc */
+
+margin: 0 ;/*Pas de marge pour le sous-menu*/
+
+width : 100% ;
+
+background-color: inherit ;
+}

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ajouter une option</title>
+    <meta charset="UTF-8">
+</head>
+<body>
+
+    <h2>Liste des groupes</h2>
+    <form id="formGr">
+        Faire un choix:<br/>
+        <select id="myList" style="margin: 10px 0 10px 0;">
+            <option>Groupe1</option>
+            <option>Groupe2</option>
+            <option>Groupe3</option>
+        </select>
+        <br><br>
+        <input type="text" id="newOptionText" placeholder="Nouveau texte de l'option">
+        <input type="button" value="Add option" onclick="addOption()">
+    </form>
+
+    <script>
+        function addOption() {
+            const newOptionText = document.getElementById("newOptionText").value; // Récupère le texte
+            if (newOptionText) { // Vérifie que le champ n'est pas vide
+                const mylist = document.getElementById("myList"); // Récupère la liste déroulante
+                const newOption = document.createElement("option"); // Crée un nouvel élément option
+                newOption.text = newOptionText; // Définit le texte de la nouvelle option
+                mylist.add(newOption); // Ajoute la nouvelle option à la liste
+                document.getElementById("newOptionText").value = ""; // Efface le champ de texte après ajout
+            } else {
+                alert("Veuillez entrer un texte pour la nouvelle option."); // Alerte si le champ est vide
+            }
+        }
+    </script>
+
+</body>
+</html>

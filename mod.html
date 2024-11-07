@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JS 4</title>
+    <meta charset="UTF-8" />
+    <script type="text/javascript" src="./js/lab3d.js"></script>
+</head>
+<body>
+
+    Cliquez sur le bouton pour cacher/rendre visible le formulaire en bas:
+    <br/><br/>
+    <input type="button" id="bt" style="color:red;" value="Cacher" onclick="f41()">
+    <br/>
+
+    <form id="formGr" style="border: 3px solid #000; padding: 1%; width: 50%; margin-left: auto; margin-right: auto;">
+        Faire un choix:<br/>
+        <select id="myList" style="margin: 10px 0 10px 0;" onchange="f42()">
+            <option>Groupe1</option>
+            <option>Groupe2</option>
+            <option>Groupe3</option>
+        </select>
+        <input type="button" value="Add option" onclick="addOption()">
+        <br><br>
+        <input type="text" id="newOptionText" placeholder="Nouveau texte de l'option">
+        <br><br>
+        <input type="text" id="updateOptionIndex" placeholder="N° de l'option à mettre à jour">
+        <input type="button" value="Update" onclick="updateOption()">
+        <br><br>
+        Choix du groupe <input type="text" id="groupe" size="15">
+    </form>
+
+    <p id="intro">
+        Le formulaire est visible.
+    </p>
+
+    <script>
+        function f41() {
+            const x = document.getElementById("bt");
+            const y = document.getElementById("intro");
+            const z = document.getElementById("formGr");
+
+            if (x.value === "Cacher") {
+                x.value = "Afficher";
+                x.style.color = "blue";
+                z.style.display = "none"; // Use display instead of visibility
+                y.innerHTML = "Formulaire caché";
+            } else {
+                x.value = "Cacher";
+                x.style.color = "red";
+                z.style.display = "block"; // Use display instead of visibility
+                y.innerHTML = "Formulaire visible";
+            }
+        }
+
+        function f42() {
+            const mylist = document.getElementById("myList");
+            const zonetexte = document.getElementById("groupe");
+            zonetexte.value = mylist.options[mylist.selectedIndex].text;
+        }
+
+        function addOption() {
+            const newOptionText = document.getElementById("newOptionText").value;
+            if (newOptionText) {
+                const mylist = document.getElementById("myList");
+                const newOption = document.createElement("option");
+                newOption.text = newOptionText;
+                mylist.add(newOption);
+                document.getElementById("newOptionText").value = ""; // Clear input field
+            } else {
+                alert("Veuillez entrer un texte pour la nouvelle option.");
+            }
+        }
+
+        function updateOption() {
+            const index = document.getElementById("updateOptionIndex").value;
+            const newOptionText = document.getElementById("newOptionText").value;
+            const mylist = document.getElementById("myList");
+
+            if (index && newOptionText) {
+                const optionIndex = parseInt(index) - 1; // Convert to zero-based index
+                if (optionIndex >= 0 && optionIndex < mylist.options.length) {
+                    mylist.options[optionIndex].text = newOptionText;
+                    document.getElementById("newOptionText").value = ""; // Clear input field
+                    document.getElementById("updateOptionIndex").value = ""; // Clear index field
+                } else {
+                    alert("Index d'option invalide.");
+                }
+            } else {
+                alert("Veuillez entrer le numéro de l'option et le nouveau texte.");
+            }
+        }
+
+        function f43() {
+            const ele = document.getElementById("navpara");
+            ele.innerHTML = ""; // Clear previous content
+            Object.keys(navigator).forEach(key => {
+                ele.innerHTML += `<h4>${key} -- ${navigator[key]}</h4>`;
+            });
+        }
+    </script>
+
+    <div id="navpara" ondblclick="clearNavigatorParams()" style="width: 50%; margin

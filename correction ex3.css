@@ -1,0 +1,149 @@
+/* Largeur de la liste */
+
+#liste{
+
+border: solid 3px rgb(25, 25, 125);
+
+padding-right: 1%;
+
+height: 60vh;
+
+width: 40vw;
+
+margin-left: auto;
+
+margin-right: auto;
+
+overflow-x: auto;
+
+overflow-y: scroll;
+
+box-shadow: 5px 5px 3px 3px gray;
+}
+/* Mise en forme du titre de niveau 1*/
+
+h1{ 
+
+width:40vw;
+
+margin-left: auto;
+
+margin-right: auto;
+
+text-align: center;
+
+margin-top: 15vh;
+
+text-transform: uppercase;
+
+background-color: #ffcc00;/* Couleur de fond du titre*/
+
+border-radius: 10px; /* Coins arrondis */
+
+}
+
+hl:hover {
+
+cursor: pointer;
+
+transform: scale(1.2); /*Agrandir légèrement au survol*/
+
+box-shadow: 0px 10px 5px rgba(0, 0, 0); /* Ombre plus prononcée au survol */
+}
+.N1>li>span{
+
+font-size: 1.2em;
+
+text-transform: capitalize;
+
+text-shadow: 1px 1px rgb(180, 90, 90);
+
+line-height: 1.2em;
+
+}
+
+/*Utilisation des compteurs CSS: un compteur par niveau */
+
+.N1,.N2,.N3 {
+
+list-style: none;
+
+}
+
+body{ 
+
+counter-reset: counterN1;
+
+}
+
+.N2{  
+    counter-reset: counterN2;
+}
+
+.N3 { 
+    counter-reset: counterN3;
+}
+
+.Nl>li::before{ 
+
+counter-increment: counterN1;
+
+content: counter (counterN1, upper-roman) ".";
+
+}
+
+.N2>li::before{
+
+counter-increment: counterN2;
+
+content: counter (counterN1, upper-roman) "." counter (counterN2) " ";
+}
+
+.N3>li::before {
+
+counter-increment: counterN3;
+
+content: counter (counterN1, upper-roman) "." counter (counterN2) "-" counter (counterN3, lower-alpha) " " ;
+}
+
+
+/*Colorier le premièr et le dernier élément d'une liste de niveau 2*/
+
+.N2>li:first-child span, .N2>li:last-child span {
+
+background-color: rgb(140, 140, 17);
+
+color: aliceblue;
+
+}
+
+/* Colorier le premier et le dernier élément d'une liste niveau 3*/
+
+.N3>li:first-child, .N3>li:last-child{
+
+background-color: rgb(0, 150, 150);
+
+color: aliceblue;
+
+}
+
+/*Colorier un élément d'une liste niveau 3, s'il est l'unique élément*/
+.N3>li:only-child {
+
+background-color: rgb(255, 0, 0);
+
+color: aliceblue;
+
+ }
+
+/* Colorier un élément d'une liste niveau 2, s'il est l'unique élément*/
+
+.N2>li:only-child{ 
+   
+ background-color: rgb(42, 239, 200);
+
+color: aliceblue;
+
+}
+
+
